@@ -1,0 +1,13 @@
+<div *ngIf="ModalOpen" id="wrapper" (click)="modalCloser($event)" class="modal ">
+    <div class="modalcontent p-1 border-8 flex flex-col " >
+
+        <div class=" flex justify-center gap-2 ">
+            
+            <textarea class="min-h-[40px] max-h-[70px] w-[250px] border-4 p-2 overflow-hidden " [value]="post.description" [(ngModel)]="description" ></textarea>
+            <div (click)="editPost()" class="border-4 bg-blue-100 hover:bg-blue-300 text-medium cursor-pointer
+            text-blue-900 w-fit h-fit px-2 py-1 rounded-md" >Save</div>
+        </div>
+
+        <img class="mt-2 w-full h-[250px]" *ngIf="post.imageUrl" [src]="post.imageUrl" alt="">
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.child{
+    position: absolute;
+       bottom: 0;
+       height: 200px;
+   }
+   .parent{
+   position: relative;
+   }
+   
+   .layer1{
+   /* background-image: url('../../../../assets/images.jpeg'); */
+   background-size: cover;
+   background-repeat: no-repeat;
+   }
+   
+   .layer2{
+   background-color: rgb(186, 186, 250);
+   }

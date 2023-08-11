@@ -1,0 +1,42 @@
+<div class="m-2">
+    <div
+      class="bg-blue-200 max-w-[80%] text-sky-900 w-fit h-fit p-2 break-all rounded-md text-sm min-w-[50%]"
+    >
+      {{ Inputcomment.comment }}
+    </div>
+    <div
+      class="ml-1  italic font-bold flex gap-4 text-[10px]"
+    >
+      <div [ngClass]="userId!==InputPost.userId && userId !==Inputcomment.userId ? 'text-stone-500' :'text-sky-700 hover:text-sky-900 '"
+      class="cursor-pointer"  (click)="deleteComment()">Delete</div>
+      <div (click)="setreplyOpen()" class="cursor-pointer text-sky-700 hover:text-sky-900">{{AllReplyComments.length}}Reply</div>
+    </div>
+    <!-- ------------------------------------reply---starts-------------------------------------------- -->
+    <div *ngIf="replyOpen">
+      <div class="flex items-center justify-center gap-4">
+        <textarea  [(ngModel)]="replyComment"
+          placeholder="Add a coment"
+          class="ml-4 bg-blue-100 border-4 h-[40px] min-h-[40px] max-h-20 text-sky-900"
+        ></textarea>
+  
+        <div (click)="addReply()"
+          class="bg-blue-200 rounded cursor-pointer p-1 border-2 hover:bg-blue-300 text-sky-900 text-sm font-medium"
+        >
+          Submit
+        </div>
+      </div>
+  
+      <div class="ml-4 my-2" *ngFor="let reply of AllReplyComments">
+          <div
+            class=" bg-blue-200 max-w-[75%] text-sky-900 w-fit h-fit p-2 break-all rounded-md text-sm min-w-[50%]"
+          >
+           {{reply.reply}}
+          </div>
+          <div [ngClass]="userId!==InputPost.userId && userId !==Inputcomment.userId &&userId!==reply.userId ? 'text-stone-500' :'text-sky-700 hover:text-sky-900'"
+          (click)="deleteReply(reply._id,reply.userId)" class="ml-2 text-[10px]  italic font-bold cursor-pointer " >Delete</div>
+  
+      </div>
+  
+    </div>
+  </div>
+  

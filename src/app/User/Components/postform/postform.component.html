@@ -1,0 +1,19 @@
+<div class="w-full bg-sky-900 rounded-md flex items-center justify-between h-20 p-2">
+
+    <form action=""></form>
+    <textarea [value]="postTest" (input)="getTest($event)" class="rounded-md w-2/3 h-3/4 min-h-[60%] max-h-[100%]  overflow-hidden"></textarea>
+    <div>
+        <!-- Use label to wrap the image and input -->
+        <label class="w-12 h-12 font-bold text-4xl text-blue-200 flex justify-center items-center">
+          <fa-icon [icon]="Image"></fa-icon>
+          <input (change)="getFile($event)" class="hidden" type="file">
+        </label>
+      </div>
+
+
+    <div
+    (click)="Onsubmit()"
+     class="w-16 h-8 bg-blue-200 text-sky-900 
+    rounded-lg flex justify-center items-center font-bold hover:pb-1 
+     hover:ease-in" >share</div>
+</div>

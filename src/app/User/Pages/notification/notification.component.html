@@ -1,0 +1,56 @@
+<div class="w-full h-full grid grid-cols-12 gap-2">
+    <!---------------------------left side-------------------  -->
+    <div class="col-span-3">
+        <div class="w-[250px]  left-2">
+            <!-- -----------------sideBar--------------- -->
+            <usersidebar></usersidebar>
+             <!-- -----------------sideBar--------------- -->
+        </div>
+    </div>
+     <!---------------------------left side end-------------------  -->
+    <div class="col-span-6">
+     
+
+
+
+
+
+       <div class='bg-blue-100 w-ful h-screen overflow-hidden border-8 p-6 overflow-y-scroll'>
+            <div class='font-bold text-2xl text-cyan-700 font-serif mb-10'>Notifications</div>
+    <div class="flex justify-end" >
+
+        <div class=" rounded-lg border-4  cursor-pointer bg-blue-200 hover:bg-blue-300 px-2 text-sm  text-sky-900 font-bold   " (click)="clearNotification()" >clear</div>
+    </div>
+              
+     <div  (click)="readNotice(notice._id)"   class=" text-sm text-cyan-900 " *ngFor="let notice of notifications">
+        <div  [class]="notice.readed?seaned:notsean " >
+                <div class='font-bold ml-10 cursor-pointer'>
+                   {{ notice.senderName }}
+                </div>
+                <div className='w-72 overflow-hidden'>
+                   {{ notice.message}}
+                </div>
+                <div> 
+               {{notice.createdAt }}
+                </div>
+        </div>
+     </div>
+
+          
+    
+        </div> 
+
+
+
+
+
+
+    </div>
+
+    <!-- ---------------------right side start------------------------- -->
+    <div class="bg-orange-200 col-span-3">
+        
+    </div>
+       <!-- ---------------------right side ------------------------- -->
+</div>
+

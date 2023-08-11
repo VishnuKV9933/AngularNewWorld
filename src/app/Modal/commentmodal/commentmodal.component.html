@@ -1,0 +1,27 @@
+<div id="wrapper" *ngIf="ModalOpen" (click)="commentModalClose($event)"  class="modal ">
+    <div class="modalcontent p-1 border-8 flex flex-col overflow-y-scroll" >
+        <img [src]="post.imageUrl" alt="">
+
+        <div class="flex w-full text-sky-900">
+            <div>{{post.description}}</div>
+        </div>
+        <hr class="m-1 " />
+        <!-- ------------------------------comment start---------------------------- -->
+        <div>
+            <div class="flex items-center justify-center gap-4">
+               
+                    <textarea 
+                    placeholder="Add a coment"  
+                    [value]="comment" (change)="getTest($event)" class="bg-blue-100 border-4 min-h-[40px] max-h-20 text-sky-900 "></textarea>
+               
+                <div (click)="addComment()" class=" bg-blue-200 rounded cursor-pointer p-1 border-2 hover:bg-blue-300  text-sky-900 font-medium">Submit</div>
+            </div>
+            <hr class="m-1 " />
+            <div class="ml-1" *ngFor="let comment of allComment">
+
+ 
+  <comment  (Commentdelete)="getComments()" [InputPost]="post" [Inputcomment]="comment"></comment>
+            </div>
+        </div>
+    </div>
+</div>

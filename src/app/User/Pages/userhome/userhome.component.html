@@ -1,0 +1,31 @@
+<div class="w-full h-full grid grid-cols-12  gap-2">
+    <!---------------------------left side-------------------  -->
+    <div class="col-span-3 ">
+        <div class="w-[250px]  left-2">
+            <!-- -----------------sideBar--------------- -->
+            <usersidebar></usersidebar>
+             <!-- -----------------sideBar--------------- -->
+        </div>
+    </div>
+     <!---------------------------left side end-------------------  -->
+    <div class="col-span-6 ">
+       
+
+        <ng-container >
+            <postform (postEvent)="getUserPost()"></postform>
+         </ng-container>
+           
+         <div *ngFor="let userPost of Userposts">
+            <postcard (postCaller)="getUserPost()" [post]="userPost" ></postcard>
+            </div>
+        
+      </div>
+
+    <!-- ---------------------right side start------------------------- -->
+    <div class=" col-span-3 ">
+    
+    </div>
+       <!-- ---------------------right side ------------------------- -->
+</div>
+
+

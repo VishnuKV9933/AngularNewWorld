@@ -1,0 +1,33 @@
+<div  class='w-full transition-all bg-blue-200 text-sky-900	 rounded-3xl mb-2 flex-row items-center  shadow-lg shadow-gray-200    p-4'>
+
+    <h2>Navigation</h2>
+<div class='' >
+
+      <div  class="font-extrabold flex  transition-all  hover:rounded-full hover:ml-6   gap-2 py-3">
+        <fa-icon class="w-8 h-8 font-bold" [icon]="Home"></fa-icon>
+        HOME
+      </div>
+</div>
+
+      <div   class="font-extrabold   flex  transition-all hover:rounded-full  hover:ml-6  gap-2 py-3">
+       
+        <fa-icon class="w-8 h-8 font-bold" [icon]="Profile">Profile</fa-icon>
+        PROFILE
+      </div>
+
+      <div   class="font-extrabold flex  transition-all hover:rounded-full  hover:ml-6  gap-2 py-3">
+        <fa-icon class="w-8 h-8 font-bold" [icon]="Chat"></fa-icon>
+        
+        CHATS
+      </div>
+
+      <div  class="font-extrabold flex  transition-all  hover:rounded-full  hover:ml-6  gap-2 py-3">
+        <fa-icon class="w-8 h-8 font-bold" [icon]="Notice"></fa-icon>
+        NOTICE!
+      </div>
+
+      <div onClick={logout} class="font-extrabold flex  transition-all hover:rounded-full  hover:ml-6  gap-2 py-3">
+        <fa-icon class="w-8 h-8 font-bold" [icon]="Logout"></fa-icon>
+        LOGOUT
+      </div>
+</div>

@@ -1,0 +1,39 @@
+<div *ngIf="modalOpen" (click)="modalCloser($event)" id="wrapper" class="modal">
+    <div class="modalcontent p-1 border-8 flex flex-col">
+      <img class="w-full h-[200px]" [src]="profilePictureUrl" alt="" />
+  
+     
+        <div class="flex w-full justify-center items-center mt-2 ">
+          <label
+            for="fileInput"
+            class="font-medium cursor-pointer bg-blue-200 hover:bg-blue-300 text-sky-900 hover:text-white w-1/2 flex rounded-lg border-2 justify-center items-center"
+          >
+            <div>Update</div>
+            <input
+              (input)="Update($event)"
+              id="fileInput"
+              accept="image/*"
+              class="hidden"
+              type="file"
+            />
+          </label>
+  
+          <div
+            class="cursor-pointer font-medium bg-blue-200 hover:bg-blue-300 text-sky-900 hover:text-white w-1/2 flex rounded-lg border-2 justify-center items-center"
+            (click)="removeProfilePic()"
+          >
+            remove
+          </div>
+        </div>
+        <div class="flex w-full justify-center items-center">
+          <div
+            class="cursor-pointer bg-blue-300 hover:bg-blue-400 text-sky-900 hover:text-white w-2/3 font-bold flex rounded-lg border-2 justify-center items-center"
+            (click)="submit()"
+          >
+            Save
+          </div>
+        </div>
+     
+    </div>
+  </div>
+  
